@@ -8,7 +8,8 @@ import sys
 import requests
 from langchain_community.chat_models import ChatOllama
 
-def test_ollama_connection():    """Test if Ollama is running and accessible"""
+def test_ollama_connection():
+    """Test if Ollama is running and accessible"""
     print("🔍 Testing Ollama connection...")
     try:
         llm = ChatOllama(model="qwen3:1.7b", base_url="http://127.0.0.1:11434")
@@ -44,8 +45,7 @@ def test_imports():
         "langchain_community",
         "beautifulsoup4",
         "youtube_transcript_api",
-        "tiktoken"
-    ]
+        "tiktoken"    ]
     
     failed_imports = []
     
@@ -54,7 +54,11 @@ def test_imports():
             if package == "beautifulsoup4":
                 import bs4
             elif package == "youtube_transcript_api":
-                import youtube_transcript_api
+                try:
+                    import youtube_transcript_api
+                except ImportError:
+                    # Try alternative import name
+                    from youtube_transcript_api import YouTubeTranscriptApi
             else:
                 __import__(package)
             print(f"✅ {package}")

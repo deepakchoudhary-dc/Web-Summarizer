@@ -1,40 +1,112 @@
-# Easy Webpage Summarizer
-A Python script designed to summarize webpages from specified URLs using the LangChain framework and the ChatOllama model. It leverages advanced language models to generate detailed summaries, making it an invaluable tool for quickly understanding the content of web-based documents.
+<div align="center">
 
-# Requirements
-ollama must be installed and served
+# 🤖 AI Web & Video Summarizer
 
-ollama run llama3:instruct
+*Transform any web content into intelligent summaries with AI*
+
+[![Python](https://img.shields.io/badge/Python-3.9+-3776AB?style=flat-square&logo=python&logoColor=white)](https://python.org)
+[![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=flat-square&logo=streamlit&logoColor=white)](https://streamlit.io)
+[![Ollama](https://img.shields.io/badge/Ollama-000000?style=flat-square&logo=ollama&logoColor=white)](https://ollama.ai)
+
+Transform lengthy articles, research papers, and YouTube videos into concise summaries using Qwen3 1.7B AI model.
+
+</div>
+
+## ✨ Features
+
+- � **Web Page Summarization** - Any website content
+- 🎥 **YouTube Video Analysis** - Automatic transcript extraction
+- � **Turkish Translation** - Translate summaries instantly
+- 📱 **Modern Web Interface** - Clean Streamlit UI
+- 📥 **Export Support** - Download as markdown files
+
+## 🚀 Quick Start
+
+### Prerequisites
+```bash
+# Install Ollama
+ollama pull qwen3:1.7b
+ollama run qwen3:1.7b
+```
+
+### Installation
+```bash
+# Clone and setup
+git clone https://github.com/deepakchoudhary-dc/Web-Summarizer.git
+cd Web-Summarizer
 pip install -r requirements.txt
-Features
-Summarization of webpages and youtube videos directly from URLs.
-Translates to Turkish language (other languages will be added soon!)
-Integration with LangChain and ChatOllama for state-of-the-art summarization.
-Command-line interface for easy use and integration into workflows.
-Usage
-To use the webpage summarizer, run the script from the command line, providing the URL of the document you wish to summarize:
 
-python summarizer.py -u "http://example.com/document"
-Replace http://example.com/document with the actual URL of the document you want to summarize.
+# Run the app
+streamlit run streamlit_app.py
+```
 
-Web UI
-To use the webpage summarizer in you web browser, you can also try gradio app.
+### Test Setup
+```bash
+python test_setup.py  # Verify everything works
+```
 
-python app/webui.py
-gradio
+## 🎮 Usage
 
-Docker
-docker build -t web_summarizer .
-docker run -p 7860:7860 web_summarizer
+1. **Open** http://localhost:8501 in your browser
+2. **Paste** any website URL or YouTube video link
+3. **Click** "Generate Summary" 
+4. **Translate** to Turkish (optional)
+5. **Download** results as markdown
 
-# Run if you run ollama on host
-docker run -d --network='host' -p 7860:7860 web_summarizer
-Development
-To contribute to the development of this script, clone the repository, make your changes, and submit a pull request. We welcome contributions that improve the script's functionality or extend its capabilities.
+## 🛠️ Available Interfaces
 
- Summarize youtube videos
- Dockerize project
- Translate to different languages
- Streaming text output on gradio
- Serve on web
+| Interface | Command | Description |
+|-----------|---------|-------------|
+| **Streamlit** (Primary) | `streamlit run streamlit_app.py` | Modern web interface |
+| **Gradio** (Legacy) | `python webui.py` | Alternative web UI |
+| **CLI** (Legacy) | `python summarizer.py -u "URL"` | Command line |
 
+## 🐳 Docker
+
+```bash
+# Quick deploy
+docker build -t ai-summarizer .
+docker run -p 8501:8501 ai-summarizer
+```
+
+## � Project Structure
+
+```
+Web-Summarizer/
+├── streamlit_app.py      # Main Streamlit app
+├── summarizer.py         # Web page processing
+├── yt_summarizer.py      # YouTube processing  
+├── translator.py         # Translation features
+├── config.py             # Configuration
+├── test_setup.py         # Setup verification
+└── requirements.txt      # Dependencies
+```
+
+## � Tech Stack
+
+- **Frontend**: Streamlit
+- **AI Model**: Qwen3 1.7B via Ollama
+- **Framework**: LangChain
+- **Web Scraping**: BeautifulSoup4
+- **Video Processing**: YouTube Transcript API
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create feature branch: `git checkout -b feature-name`
+3. Test changes: `python test_setup.py`
+4. Submit pull request
+
+## � License
+
+MIT License - see [LICENSE](LICENSE) for details.
+
+---
+
+<div align="center">
+
+**Made with ❤️ using AI**
+
+[⬆️ Back to Top](#-ai-web--video-summarizer)
+
+</div>
