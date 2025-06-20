@@ -105,7 +105,7 @@ MIT License - see [LICENSE](LICENSE) for details.
 
 <div align="center">
 
-**Made with ❤️ using AI**
+**Made with ❤️ **
 
 [⬆️ Back to Top](#-ai-web--video-summarizer)
 
